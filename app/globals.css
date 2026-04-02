@@ -1,0 +1,29 @@
+@import "tailwindcss";
+
+:root {
+  --bg-main: #FFF8F7;
+  --rose-petal: #D4949E;
+  --rose-dark: #844F58;
+  --rose-mist: #FFF0F2;
+  --gold: #FADCAB;
+  --text-main: #23191B;
+  --text-secondary: #514345;
+  --whatsapp: #25D366;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
