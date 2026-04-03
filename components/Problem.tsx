@@ -87,8 +87,8 @@ export default function Problem() {
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.07 }}
               style={{
-                backgroundColor: "#FFFFFF",
-                border: "1px solid rgba(212,148,158,0.15)",
+                backgroundColor: "#FFF0F2",
+                border: "1px solid rgba(213,194,196,0.15)",
                 borderRadius: "10px",
                 padding: "22px 18px",
                 display: "flex",
