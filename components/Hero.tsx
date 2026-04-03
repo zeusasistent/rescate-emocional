@@ -6,88 +6,116 @@ const badges = ["30 DÍAS DE MÉTODO", "+20 EJERCICIOS", "CONTACTO CERO"];
 
 export default function Hero() {
   return (
-    <section style={{ backgroundColor: "#FFF8F7", minHeight: "100vh" }} className="flex items-center">
-
-      {/* MOBILE */}
-      <div className="flex flex-col w-full md:hidden">
-        <div className="relative w-full" style={{ height: "55vw", minHeight: "280px" }}>
-          <Image src="/images/hero.png" alt="Método de Rescate Emocional" fill className="object-cover object-top" priority />
-        </div>
-        <div className="px-6 py-10 flex flex-col gap-5">
-          <div className="flex flex-wrap gap-2">
-            {badges.map(b => (
-              <span key={b} style={{ backgroundColor: "#FADCAB", color: "#23191B", fontFamily: "var(--font-jakarta)", fontSize: "10px", letterSpacing: "0.1em" }} className="px-4 py-1.5 rounded-full font-semibold uppercase">{b}</span>
-            ))}
-          </div>
-          <h1 style={{ fontFamily: "var(--font-cormorant)", fontSize: "38px", fontWeight: 600, fontStyle: "normal", color: "#23191B", lineHeight: 1.1 }}>
-            Deja de sufrir por quien no te elige y recupera tu poder en 30 días.
-          </h1>
-          <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "16px", color: "#514345", lineHeight: 1.6 }}>
-            +20 ejercicios reales. Sin frases vacías. Un programa paso a paso para reconstruir tu amor propio desde cero.
-          </p>
-          <motion.a href="#comprar" whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}
-            style={{ backgroundColor: "#D4949E", color: "#5B2D36", borderRadius: "50px", fontFamily: "var(--font-jakarta)", fontSize: "16px", fontWeight: 600, textDecoration: "none", display: "inline-block", padding: "14px 36px", alignSelf: "flex-start" }}>
-            Quiero mi Workbook
-          </motion.a>
-        </div>
+    <section
+      className="relative w-full overflow-hidden"
+      style={{ backgroundColor: "#1a1614", minHeight: "100vh" }}
+    >
+      {/* Background image fills entire section */}
+      <div className="absolute inset-0">
+        <Image
+          src="/images/hero.png"
+          alt="Método de Rescate Emocional"
+          fill
+          className="object-cover object-center"
+          priority
+        />
+        {/* Dark overlay for text readability */}
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(to right, rgba(15,10,10,0.72) 0%, rgba(15,10,10,0.55) 50%, rgba(15,10,10,0.15) 100%)" }}
+        />
       </div>
 
-      {/* DESKTOP */}
-      <div className="hidden md:flex w-full" style={{ maxWidth: "1280px", margin: "0 auto", minHeight: "100vh" }}>
-
-        {/* Columna texto - izquierda */}
+      {/* Content overlay */}
+      <div
+        className="relative z-10 flex flex-col items-center justify-center"
+        style={{ minHeight: "100vh", padding: "80px 24px" }}
+      >
+        {/* Badges */}
         <motion.div
-          className="flex flex-col justify-center"
-          style={{ flex: "0 0 55%", padding: "80px 80px 80px 100px" }}
-          initial={{ opacity: 0, y: 30 }}
+          className="flex flex-wrap gap-2 justify-center mb-10"
+          initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
+          transition={{ duration: 0.5 }}
         >
-          {/* Badges */}
-          <div className="flex flex-wrap gap-3 mb-8">
-            {badges.map(b => (
-              <span key={b} style={{ backgroundColor: "#FADCAB", color: "#23191B", fontFamily: "var(--font-jakarta)", fontSize: "11px", letterSpacing: "0.12em" }} className="px-5 py-2 rounded-full font-semibold uppercase">{b}</span>
-            ))}
-          </div>
-
-          {/* Titular */}
-          <h1 style={{ fontFamily: "var(--font-cormorant)", fontSize: "58px", fontWeight: 600, fontStyle: "normal", color: "#23191B", lineHeight: 1.08, marginBottom: "24px", maxWidth: "560px" }}>
-            Deja de sufrir por quien no te elige y recupera tu poder en 30 días.
-          </h1>
-
-          {/* Subtítulo */}
-          <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "18px", color: "#514345", lineHeight: 1.65, marginBottom: "40px", maxWidth: "480px" }}>
-            +20 ejercicios reales. Sin frases vacías. Un programa paso a paso para reconstruir tu amor propio desde cero.
-          </p>
-
-          {/* CTA */}
-          <motion.a
-            href="#comprar"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-            style={{ backgroundColor: "#D4949E", color: "#5B2D36", borderRadius: "50px", fontFamily: "var(--font-jakarta)", fontSize: "18px", fontWeight: 600, textDecoration: "none", display: "inline-block", padding: "16px 48px", alignSelf: "flex-start" }}
-          >
-            Quiero mi Workbook
-          </motion.a>
+          {badges.map(b => (
+            <span
+              key={b}
+              style={{
+                backgroundColor: "rgba(250,220,171,0.18)",
+                border: "1px solid rgba(250,220,171,0.5)",
+                color: "#FADCAB",
+                fontFamily: "var(--font-jakarta)",
+                fontSize: "10px",
+                letterSpacing: "0.13em",
+              }}
+              className="px-4 py-1.5 rounded-full font-semibold uppercase"
+            >
+              {b}
+            </span>
+          ))}
         </motion.div>
 
-        {/* Columna imagen - derecha */}
-        <motion.div
-          className="relative"
-          style={{ flex: "0 0 45%" }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.8 }}
+        {/* Heading */}
+        <motion.h1
+          initial={{ opacity: 0, y: 24 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+          style={{
+            fontFamily: "var(--font-cormorant)",
+            fontSize: "clamp(42px, 6vw, 76px)",
+            fontWeight: 600,
+            fontStyle: "italic",
+            color: "#FFFFFF",
+            lineHeight: 1.08,
+            textAlign: "center",
+            maxWidth: "780px",
+            marginBottom: "24px",
+          }}
         >
-          <Image
-            src="/images/hero.png"
-            alt="Mujer en contemplación"
-            fill
-            className="object-cover object-center"
-            priority
-          />
-        </motion.div>
+          Déjate guiar por quién no te elige y recupera tu poder en 30 días.
+        </motion.h1>
 
+        {/* Subtitle */}
+        <motion.p
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          style={{
+            fontFamily: "var(--font-jakarta)",
+            fontSize: "clamp(15px, 1.8vw, 18px)",
+            color: "rgba(255,255,255,0.75)",
+            lineHeight: 1.65,
+            textAlign: "center",
+            maxWidth: "520px",
+            marginBottom: "40px",
+          }}
+        >
+          +20 ejercicios reales. Sin frases vacías. Un programa paso a paso para reconectar tu autoestima.
+        </motion.p>
+
+        {/* CTA */}
+        <motion.a
+          href="HOTMART_LINK_PLACEHOLDER"
+          initial={{ opacity: 0, y: 16 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3 }}
+          whileHover={{ scale: 1.03 }}
+          whileTap={{ scale: 0.97 }}
+          style={{
+            backgroundColor: "#D4949E",
+            color: "#fff",
+            borderRadius: "50px",
+            fontFamily: "var(--font-jakarta)",
+            fontSize: "17px",
+            fontWeight: 600,
+            textDecoration: "none",
+            display: "inline-block",
+            padding: "16px 48px",
+          }}
+        >
+          Quiero mi Workbook
+        </motion.a>
       </div>
     </section>
   );

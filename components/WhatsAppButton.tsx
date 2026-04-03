@@ -1,5 +1,4 @@
 "use client";
-
 import { motion } from "framer-motion";
 
 export default function WhatsAppButton() {
@@ -9,13 +8,23 @@ export default function WhatsAppButton() {
       target="_blank"
       rel="noopener noreferrer"
       aria-label="Contactar por WhatsApp"
-      className="fixed bottom-6 right-6 w-14 h-14 rounded-full flex items-center justify-center shadow-lg"
       style={{
+        position: "fixed",
+        bottom: "24px",
+        right: "24px",
+        width: "56px",
+        height: "56px",
+        borderRadius: "50%",
         backgroundColor: "#25D366",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+        boxShadow: "0 4px 16px rgba(37,211,102,0.35)",
         zIndex: 9999,
+        textDecoration: "none",
       }}
-      whileHover={{ scale: 1.05 }}
-      whileTap={{ scale: 0.95 }}
+      whileHover={{ scale: 1.06 }}
+      whileTap={{ scale: 0.94 }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"

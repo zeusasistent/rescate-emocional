@@ -1,58 +1,71 @@
 "use client";
-
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const badges = ["30 DÍAS", "+20 EJERCICIOS", "AMOR PROPIO"];
 
 export default function CtaFinal() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-
   return (
     <section
       id="comprar"
-      className="w-full py-24"
       style={{
-        background: "linear-gradient(180deg, #FFF0F2 0%, #FFFAF8 100%)",
+        background: "linear-gradient(160deg, #F9EDE8 0%, #FFF8F7 60%, #FDF5EE 100%)",
+        padding: "96px 24px 112px",
       }}
     >
-      <div className="max-w-2xl mx-auto px-6 flex flex-col items-center gap-8 text-center">
+      <div
+        style={{
+          maxWidth: "600px",
+          margin: "0 auto",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          textAlign: "center",
+          gap: "32px",
+        }}
+      >
+        {/* Heading */}
         <motion.h2
-          ref={ref}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
           style={{
             fontFamily: "var(--font-cormorant)",
-            fontWeight: 700,
-            fontSize: "clamp(36px, 5vw, 60px)",
+            fontSize: "clamp(36px, 5vw, 58px)",
+            fontWeight: 600,
+            fontStyle: "italic",
             color: "#23191B",
-            lineHeight: "1.2",
+            lineHeight: 1.15,
           }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.4, ease: "easeOut" }}
         >
           Empieza hoy. Tu paz no puede esperar.
         </motion.h2>
 
         {/* Badges */}
         <motion.div
-          className="flex flex-wrap gap-3 justify-center"
           initial={{ opacity: 0, y: 10 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.1 }}
+          style={{ display: "flex", gap: "10px", flexWrap: "wrap", justifyContent: "center" }}
         >
-          {badges.map((badge) => (
+          {badges.map(b => (
             <span
-              key={badge}
-              className="px-5 py-2 rounded-full text-sm font-semibold tracking-widest uppercase border"
+              key={b}
               style={{
-                backgroundColor: "#FFFFFF",
-                borderColor: "#D4949E",
-                color: "#844F58",
                 fontFamily: "var(--font-jakarta)",
+                fontSize: "10px",
+                fontWeight: 600,
+                letterSpacing: "0.12em",
+                color: "#844F58",
+                backgroundColor: "rgba(212,148,158,0.12)",
+                border: "1px solid rgba(212,148,158,0.3)",
+                borderRadius: "50px",
+                padding: "6px 18px",
+                textTransform: "uppercase",
               }}
             >
-              {badge}
+              {b}
             </span>
           ))}
         </motion.div>
@@ -60,25 +73,27 @@ export default function CtaFinal() {
         {/* CTA Button */}
         <motion.div
           initial={{ opacity: 0, y: 10 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.4, ease: "easeOut", delay: 0.2 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.2 }}
         >
           <motion.a
             href="HOTMART_LINK_PLACEHOLDER"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-block font-semibold"
+            whileHover={{ scale: 1.03 }}
+            whileTap={{ scale: 0.97 }}
             style={{
               backgroundColor: "#844F58",
               color: "#FFFFFF",
               borderRadius: "50px",
-              padding: "16px 48px",
-              fontSize: "20px",
+              padding: "18px 52px",
+              fontSize: "17px",
               fontFamily: "var(--font-jakarta)",
+              fontWeight: 600,
               textDecoration: "none",
+              display: "inline-block",
             }}
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
           >
             Quiero mi Workbook
           </motion.a>
@@ -86,22 +101,22 @@ export default function CtaFinal() {
 
         {/* WhatsApp link */}
         <motion.p
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.4, delay: 0.3 }}
           style={{
             fontFamily: "var(--font-jakarta)",
-            fontSize: "15px",
+            fontSize: "14px",
             color: "#514345",
           }}
-          initial={{ opacity: 0 }}
-          animate={inView ? { opacity: 1 } : {}}
-          transition={{ duration: 0.4, ease: "easeOut", delay: 0.3 }}
         >
           ¿Tienes dudas?{" "}
           <a
             href="WHATSAPP_LINK_PLACEHOLDER"
             style={{
-              color: "#844F58",
+              color: "#514345",
               textDecoration: "underline",
-              fontWeight: 500,
             }}
           >
             Escríbenos por WhatsApp

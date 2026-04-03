@@ -1,7 +1,5 @@
 "use client";
-
-import { motion, useInView } from "framer-motion";
-import { useRef } from "react";
+import { motion } from "framer-motion";
 
 const yes = [
   "Estás pensando en alguien que no te elige ni te valora.",
@@ -16,107 +14,121 @@ const no = [
 ];
 
 export default function ForWhom() {
-  const ref = useRef(null);
-  const inView = useInView(ref, { once: true, margin: "-60px" });
-
   return (
-    <section className="w-full py-20" style={{ backgroundColor: "#FFFFFF" }}>
-      <div className="max-w-4xl mx-auto px-6 flex flex-col gap-10">
-        <motion.h2
-          ref={ref}
-          className="text-center"
-          style={{
-            fontFamily: "var(--font-cormorant)",
-            fontWeight: 700,
-            fontSize: "36px",
-            color: "#23191B",
-          }}
-          initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.4, ease: "easeOut" }}
+    <section style={{ backgroundColor: "#FFFFFF", padding: "80px 24px 96px" }}>
+      <div
+        style={{
+          maxWidth: "860px",
+          margin: "0 auto",
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "48px",
+        }}
+      >
+        {/* Yes column */}
+        <motion.div
+          initial={{ opacity: 0, x: -16 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+          style={{ display: "flex", flexDirection: "column", gap: "16px" }}
         >
-          ¿Para quién es?
-        </motion.h2>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Yes column */}
-          <motion.div
-            className="flex flex-col gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, ease: "easeOut", delay: 0.1 }}
-          >
-            <h3
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#844F58" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="9 12 11 14 15 10"/>
+            </svg>
+            <span
               style={{
                 fontFamily: "var(--font-jakarta)",
+                fontSize: "14px",
                 fontWeight: 600,
-                fontSize: "18px",
-                color: "#23191B",
+                color: "#844F58",
+                fontStyle: "italic",
               }}
             >
-              ✅ Sí es para ti si...
-            </h3>
-            <ul className="flex flex-col gap-3">
-              {yes.map((item, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-3 p-4 rounded-2xl"
-                  style={{ backgroundColor: "#FFF0F2" }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "var(--font-jakarta)",
-                      fontSize: "15px",
-                      color: "#23191B",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
+              Sí es para ti si...
+            </span>
+          </div>
 
-          {/* No column */}
-          <motion.div
-            className="flex flex-col gap-4"
-            initial={{ opacity: 0, y: 20 }}
-            animate={inView ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.4, ease: "easeOut", delay: 0.2 }}
-          >
-            <h3
+          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+            {yes.map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                style={{
+                  backgroundColor: "#FFF8F7",
+                  border: "1px solid rgba(212,148,158,0.15)",
+                  borderRadius: "10px",
+                  padding: "16px 18px",
+                }}
+              >
+                <p
+                  style={{
+                    fontFamily: "var(--font-jakarta)",
+                    fontSize: "13.5px",
+                    color: "#514345",
+                    lineHeight: 1.65,
+                  }}
+                >
+                  {item}
+                </p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
+        {/* No column */}
+        <motion.div
+          initial={{ opacity: 0, x: 16 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5, delay: 0.1 }}
+          style={{ display: "flex", flexDirection: "column", gap: "16px" }}
+        >
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", marginBottom: "4px" }}>
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#514345" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="15" y1="9" x2="9" y2="15"/>
+              <line x1="9" y1="9" x2="15" y2="15"/>
+            </svg>
+            <span
               style={{
                 fontFamily: "var(--font-jakarta)",
+                fontSize: "14px",
                 fontWeight: 600,
-                fontSize: "18px",
-                color: "#23191B",
+                color: "#514345",
+                fontStyle: "italic",
               }}
             >
-              ❌ No es para ti si...
-            </h3>
-            <ul className="flex flex-col gap-3">
-              {no.map((item, i) => (
-                <li
-                  key={i}
-                  className="flex items-start gap-3 p-4 rounded-2xl"
-                  style={{ backgroundColor: "#f5f5f5" }}
-                >
-                  <span
-                    style={{
-                      fontFamily: "var(--font-jakarta)",
-                      fontSize: "15px",
-                      color: "#514345",
-                      lineHeight: "1.6",
-                    }}
-                  >
-                    {item}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </motion.div>
-        </div>
+              No es para ti si...
+            </span>
+          </div>
+
+          <div style={{ display: "flex", flexDirection: "column", gap: "22px", paddingTop: "4px" }}>
+            {no.map((item, i) => (
+              <motion.p
+                key={i}
+                initial={{ opacity: 0, y: 10 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.4, delay: i * 0.08 }}
+                style={{
+                  fontFamily: "var(--font-jakarta)",
+                  fontSize: "13.5px",
+                  color: "#514345",
+                  lineHeight: 1.65,
+                  paddingLeft: "4px",
+                }}
+              >
+                {item}
+              </motion.p>
+            ))}
+          </div>
+        </motion.div>
       </div>
     </section>
   );
