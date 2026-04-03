@@ -22,7 +22,7 @@ export default function Hero() {
         {/* Dark overlay for text readability */}
         <div
           className="absolute inset-0"
-          style={{ background: "linear-gradient(to right, rgba(15,10,10,0.72) 0%, rgba(15,10,10,0.55) 50%, rgba(15,10,10,0.15) 100%)" }}
+          style={{ background: "rgba(255, 255, 255, 0.65)" }}
         />
       </div>
 
@@ -33,7 +33,8 @@ export default function Hero() {
       >
         {/* Badges */}
         <motion.div
-          className="flex flex-wrap gap-2 justify-center mb-10"
+          className="flex flex-wrap gap-2 justify-center mb-32"
+          style={{marginBottom: "32px !important"}}
           initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
@@ -44,12 +45,17 @@ export default function Hero() {
               style={{
                 backgroundColor: "rgba(250,220,171,0.18)",
                 border: "1px solid rgba(250,220,171,0.5)",
-                color: "#FADCAB",
+                color: "#715B35",
                 fontFamily: "var(--font-jakarta)",
                 fontSize: "10px",
                 letterSpacing: "0.13em",
+                paddingLeft: "16px",
+                paddingRight: "16px",
+                paddingTop: "8px",
+                paddingBottom: "8px",
+                display: "inline-block"
               }}
-              className="px-4 py-1.5 rounded-full font-semibold uppercase"
+              className="px-8 py-16 rounded-full font-semibold uppercase"
             >
               {b}
             </span>
@@ -66,14 +72,14 @@ export default function Hero() {
             fontSize: "clamp(42px, 6vw, 76px)",
             fontWeight: 600,
             fontStyle: "italic",
-            color: "#FFFFFF",
+            color: "23191B",
             lineHeight: 1.08,
             textAlign: "center",
             maxWidth: "780px",
             marginBottom: "24px",
           }}
         >
-          Déjate guiar por quién no te elige y recupera tu poder en 30 días.
+          Deja de sufrir por quien no te elige y recupera tu poder en 30 días.
         </motion.h1>
 
         {/* Subtitle */}
@@ -84,7 +90,7 @@ export default function Hero() {
           style={{
             fontFamily: "var(--font-jakarta)",
             fontSize: "clamp(15px, 1.8vw, 18px)",
-            color: "rgba(255,255,255,0.75)",
+            color: "rgba(81,67,69,1)",
             lineHeight: 1.65,
             textAlign: "center",
             maxWidth: "520px",
@@ -96,7 +102,7 @@ export default function Hero() {
 
         {/* CTA */}
         <motion.a
-          href="HOTMART_LINK_PLACEHOLDER"
+          href="https://go.hotmart.com/Q105155672B?dp=1"
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
@@ -104,7 +110,7 @@ export default function Hero() {
           whileTap={{ scale: 0.97 }}
           style={{
             backgroundColor: "#D4949E",
-            color: "#fff",
+            color: "#5B2D36",
             borderRadius: "50px",
             fontFamily: "var(--font-jakarta)",
             fontSize: "17px",
