@@ -19,7 +19,7 @@ export default function Hero() {
               <span key={b} style={{ backgroundColor: "#FADCAB", color: "#23191B", fontFamily: "var(--font-jakarta)", fontSize: "10px", letterSpacing: "0.1em" }} className="px-4 py-1.5 rounded-full font-semibold uppercase">{b}</span>
             ))}
           </div>
-          <h1 style={{ fontFamily: "var(--font-cormorant)", fontSize: "38px", fontWeight: 600, color: "#23191B", lineHeight: 1.1 }}>
+          <h1 style={{ fontFamily: "var(--font-cormorant)", fontSize: "38px", fontWeight: 600, fontStyle: "normal", color: "#23191B", lineHeight: 1.1 }}>
             Deja de sufrir por quien no te elige y recupera tu poder en 30 días.
           </h1>
           <p style={{ fontFamily: "var(--font-jakarta)", fontSize: "16px", color: "#514345", lineHeight: 1.6 }}>
@@ -51,7 +51,7 @@ export default function Hero() {
           </div>
 
           {/* Titular */}
-          <h1 style={{ fontFamily: "var(--font-cormorant)", fontSize: "58px", fontWeight: 600, color: "#23191B", lineHeight: 1.08, marginBottom: "24px", maxWidth: "560px" }}>
+          <h1 style={{ fontFamily: "var(--font-cormorant)", fontSize: "58px", fontWeight: 600, fontStyle: "normal", color: "#23191B", lineHeight: 1.08, marginBottom: "24px", maxWidth: "560px" }}>
             Deja de sufrir por quien no te elige y recupera tu poder en 30 días.
           </h1>
 
