@@ -1,14 +1,14 @@
 "use client";
 import { motion } from "framer-motion";
 
-const badges = ["30 DÍAS", "+20 EJERCICIOS", "AMOR PROPIO"];
+const badges = ["EMPODERAMIENTO", "SANACIÓN", "AMOR PROPIO"];
 
 export default function CtaFinal() {
   return (
     <section
       id="comprar"
       style={{
-        background: "linear-gradient(160deg, #F9EDE8 0%, #FFF8F7 60%, #FDF5EE 100%)",
+        background: "linear-gradient(180deg, #F9EDE8 0%, #FFF0F2 60%, #FEF6E8 100%)",
         padding: "96px 24px 112px",
       }}
     >
@@ -84,8 +84,8 @@ export default function CtaFinal() {
             whileHover={{ scale: 1.03 }}
             whileTap={{ scale: 0.97 }}
             style={{
-              backgroundColor: "#844F58",
-              color: "#FFFFFF",
+              backgroundColor: "#D4949E",
+              color: "#5B2D36",
               borderRadius: "50px",
               padding: "18px 52px",
               fontSize: "17px",

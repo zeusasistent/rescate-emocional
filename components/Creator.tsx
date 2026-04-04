@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 export default function Creator() {
   return (
-    <section style={{ backgroundColor: "#FBF5F0", padding: "88px 24px 96px" }}>
+    <section style={{ backgroundColor: "#FFF8FT", padding: "88px 24px 96px" }}>
       <div
         style={{
           maxWidth: "640px",
@@ -33,17 +33,16 @@ export default function Creator() {
             justifyContent: "center",
           }}
         >
-          <span
-            style={{
-              fontFamily: "var(--font-cormorant)",
-              fontSize: "36px",
-              fontStyle: "italic",
-              color: "#D4949E",
-              fontWeight: 600,
-            }}
-          >
-            N
-          </span>
+          <img
+          src="/images/creator.png"
+          alt= "creator"
+          style={{
+            width: "96px",
+            height: "100%",
+            objectFit: "cover",
+            display: "block",
+          }}
+          />
         </motion.div>
 
         {/* Title */}
