@@ -1,9 +1,10 @@
 "use client";
 import { motion } from "framer-motion";
+import { publicPath } from "@/lib/publicPath";
 
 export default function Creator() {
   return (
-    <section style={{ backgroundColor: "#FFF8FT", padding: "88px 24px 96px" }}>
+    <section style={{ backgroundColor: "#FFF8F7", padding: "88px 24px 96px" }}>
       <div
         style={{
           maxWidth: "640px",
@@ -34,7 +35,7 @@ export default function Creator() {
           }}
         >
           <img
-          src="/images/creator.png"
+          src={publicPath("/images/creator.png")}
           alt= "creator"
           style={{
             width: "96px",

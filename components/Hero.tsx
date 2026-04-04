@@ -1,6 +1,6 @@
 "use client";
-import Image from "next/image";
 import { motion } from "framer-motion";
+import { publicPath } from "@/lib/publicPath";
 
 const badges = ["30 DÍAS DE MÉTODO", "+20 EJERCICIOS", "CONTACTO CERO"];
 
@@ -12,12 +12,18 @@ export default function Hero() {
     >
       {/* Background image fills entire section */}
       <div className="absolute inset-0">
-        <Image
-          src="/images/hero.png"
+        <img
+          src={publicPath("/images/hero.png")}
           alt="Método de Rescate Emocional"
-          fill
           className="object-cover object-center"
-          priority
+          style={{
+            position: "absolute",
+            height: "100%",
+            width: "100%",
+            left: 0,
+            top: 0,
+          }}
+          fetchPriority="high"
         />
         {/* Dark overlay for text readability */}
         <div

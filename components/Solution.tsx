@@ -1,5 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
+import { publicPath } from "@/lib/publicPath";
 
 const points = [
   "Estructura diaria paso a paso.",
@@ -68,7 +69,7 @@ export default function Solution() {
           >
             {/* Imagen de fondo (El Workbook/Hojas) */}
             <img 
-              src="/images/workbook-mockup.png" 
+              src={publicPath("/images/workbook-mockup.png")} 
               alt="Workbook"
               style={{
                 width: "236px",
@@ -84,7 +85,7 @@ export default function Solution() {
 
             {/* Imagen de adelante (El iPad) */}
             <img 
-              src="/images/ipad-mockup.png" 
+              src={publicPath("/images/ipad-mockup.png")} 
               alt="iPad"
               style={{
                 width: "236px",

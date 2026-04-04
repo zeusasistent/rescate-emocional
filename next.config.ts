@@ -1,38 +1,15 @@
 import type { NextConfig } from "next";
 
+// GitHub Pages (project site): NEXT_PUBLIC_BASE_PATH=/nombre-del-repo en el workflow de deploy.
+// `output: "export"` no admite `headers()` en next.config; el hosting estático no los aplica igual.
+const basePath = process.env.NEXT_PUBLIC_BASE_PATH || "";
+
 const nextConfig: NextConfig = {
-  async headers() {
-    return [
-      {
-        source: "/(.*)",
-        headers: [
-          {
-            key: "Content-Security-Policy",
-            value: [
-              "default-src 'self'",
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
-              "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
-              "font-src 'self' https://fonts.gstatic.com",
-              "img-src 'self' data: blob:",
-              "connect-src 'self'",
-              "frame-ancestors 'none'",
-              "object-src 'none'",
-              "base-uri 'self'",
-            ].join("; "),
-          },
-          { key: "X-Frame-Options", value: "DENY" },
-          { key: "X-Content-Type-Options", value: "nosniff" },
-          {
-            key: "Referrer-Policy",
-            value: "strict-origin-when-cross-origin",
-          },
-          {
-            key: "Permissions-Policy",
-            value: "camera=(), microphone=(), geolocation=()",
-          },
-        ],
-      },
-    ];
+  output: "export",
+  basePath: basePath || undefined,
+  trailingSlash: true,
+  images: {
+    unoptimized: true,
   },
 };
 
