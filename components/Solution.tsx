@@ -47,7 +47,7 @@ export default function Solution() {
           style={{
             display: "grid",
             gridTemplateColumns: "1fr 1fr",
-            gap: "64px",
+            gap: "72px",
             alignItems: "center",
           }}
         >
@@ -58,92 +58,44 @@ export default function Solution() {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
             style={{
+              position: "relative", // Esto permite encimar una imagen sobre otra
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              height: "500px", // Ajusta la altura según necesites
+              width: "100%", //Que use todo el ancho de su columna
             }}
           >
-            <div
+            {/* Imagen de fondo (El Workbook/Hojas) */}
+            <img 
+              src="/images/workbook-mockup.png" 
+              alt="Workbook"
               style={{
-                width: "100%",
-                maxWidth: "320px",
-                aspectRatio: "4/3",
-                borderRadius: "16px",
-                background: "linear-gradient(135deg, #F5EDE8 0%, #E8D5CC 40%, #C9B0A8 100%)",
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                boxShadow: "0 8px 32px rgba(132,79,88,0.15)",
-                position: "relative",
-                overflow: "hidden",
+                width: "236px",
+                height: "auto",
+                transform: "translate(-40px, 0px) rotate(-16deg)", // Le damos esa inclinación coqueta
+                boxShadow: "0 15px 35px rgba(0,0,0,0.12)",
+                position: "absolute",
+                zIndex: 1,
+                left: "o", // la pegamos a la izquierda
+                borderRadius: "48px",
               }}
-            >
-              {/* Book mockup */}
-              <div
-                style={{
-                  width: "55%",
-                  aspectRatio: "3/4",
-                  backgroundColor: "#fff",
-                  borderRadius: "4px",
-                  boxShadow: "4px 4px 16px rgba(0,0,0,0.18)",
-                  display: "flex",
-                  flexDirection: "column",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  padding: "16px 12px",
-                  transform: "rotate(-3deg)",
-                  position: "relative",
-                  zIndex: 2,
-                }}
-              >
-                <p
-                  style={{
-                    fontFamily: "var(--font-cormorant)",
-                    fontSize: "9px",
-                    fontStyle: "italic",
-                    color: "#844F58",
-                    textAlign: "center",
-                    lineHeight: 1.4,
-                    marginBottom: "8px",
-                  }}
-                >
-                  El Método del Rescate Emocional
-                </p>
-                <div
-                  style={{
-                    width: "60%",
-                    height: "1px",
-                    backgroundColor: "#D4949E",
-                    marginBottom: "8px",
-                  }}
-                />
-                <p
-                  style={{
-                    fontFamily: "var(--font-jakarta)",
-                    fontSize: "7px",
-                    color: "#514345",
-                    textAlign: "center",
-                    lineHeight: 1.5,
-                  }}
-                >
-                  Workbook 30 días
-                </p>
-              </div>
-              {/* Pen */}
-              <div
-                style={{
-                  position: "absolute",
-                  bottom: "18px",
-                  left: "18px",
-                  width: "80px",
-                  height: "6px",
-                  backgroundColor: "#8B7355",
-                  borderRadius: "3px",
-                  transform: "rotate(-30deg)",
-                  zIndex: 1,
-                }}
-              />
-            </div>
+            />
+
+            {/* Imagen de adelante (El iPad) */}
+            <img 
+              src="/images/ipad-mockup.png" 
+              alt="iPad"
+              style={{
+                width: "236px",
+                height: "auto",
+                transform: "translate(80px, 20px) rotate(10deg)", // Lo movemos un poco para que se desfase
+                boxShadow: "0 25px 55px rgba(0,0,0,0.2)",
+                position: "relative",
+                zIndex: 2,
+                borderRadius: "48px",
+              }}
+            />
           </motion.div>
 
           {/* Right: text + CTA */}
@@ -197,12 +149,12 @@ export default function Solution() {
 
             <div style={{ paddingTop: "8px" }}>
               <motion.a
-                href="HOTMART_LINK_PLACEHOLDER"
+                href="https://go.hotmart.com/Q105155672B?dp=1"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 style={{
                   backgroundColor: "#D4949E",
-                  color: "#fff",
+                  color: "#5B2D36",
                   borderRadius: "50px",
                   fontFamily: "var(--font-jakarta)",
                   fontSize: "15px",
