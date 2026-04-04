@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 
 const points = [
   "Estructura diaria paso a paso.",
-  "+20 ejercicios psicológicos prácticos.",
+  "Ejercicios psicológicos prácticos.",
   "Método blindado de 'Contacto Cero'.",
 ];
 
