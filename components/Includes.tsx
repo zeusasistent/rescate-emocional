@@ -112,6 +112,8 @@ export default function Includes() {
                 padding: "24px 20px",
                 display: "flex",
                 flexDirection: "column",
+                alignItems: "center", //Centra el icono 
+                textAlign: "center", //Centra el texto
                 gap: "10px",
               }}
             >
