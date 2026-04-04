@@ -51,7 +51,7 @@ export default function ForWhom() {
             </span>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
             {yes.map((item, i) => (
               <motion.div
                 key={i}
@@ -60,18 +60,22 @@ export default function ForWhom() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 style={{
-                  backgroundColor: "#FFF8F7",
+                  backgroundColor: "#FFF0F2",
                   border: "1px solid rgba(212,148,158,0.15)",
-                  borderRadius: "10px",
-                  padding: "16px 18px",
+                  borderRadius: "16px",
+                  //width: "100%",
+                  minHeight: "100px",
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "16px 24px",
                 }}
               >
                 <p
                   style={{
                     fontFamily: "var(--font-jakarta)",
-                    fontSize: "13.5px",
+                    fontSize: "16px",
                     color: "#514345",
-                    lineHeight: 1.65,
+                    lineHeight: "auto",
                   }}
                 >
                   {item}
@@ -108,25 +112,37 @@ export default function ForWhom() {
             </span>
           </div>
 
-          <div style={{ display: "flex", flexDirection: "column", gap: "22px", paddingTop: "4px" }}>
+          <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
             {no.map((item, i) => (
-              <motion.p
+              <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.08 }}
                 style={{
-                  fontFamily: "var(--font-jakarta)",
-                  fontSize: "13.5px",
-                  color: "#514345",
-                  lineHeight: 1.65,
-                  paddingLeft: "4px",
+                  backgroundColor: "rgba(213,194,196,0.10)",
+                  border: "1px solid rgba(213,194,196,0.15)",
+                  borderRadius: "16px",
+                 // width: "100%",
+                  minHeight: "100px",
+                  display: "flex",
+                  alignItems: "center",
+                  padding: "16px 24px",
                 }}
               >
-                {item}
-              </motion.p>
-            ))}
+                  <p
+                  style={{
+                    fontFamily: "var(--font-jakarta)",
+                    fontSize: "16px",
+                    color: "#514345",
+                    lineHeight: "auto",
+                  }}
+                >
+                 {item}
+                </p>
+              </motion.div>
+           ))}
           </div>
         </motion.div>
       </div>
